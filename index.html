@@ -405,6 +405,17 @@
               </ul>
           </li>
           <li>
+            <a href="#statuses" class="toc-h1 toc-link" data-title="Statuses">Statuses</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#add-clienthold-to-domain" class="toc-h2 toc-link" data-title="Add clientHold to domain">Add clientHold to domain</a>
+                  </li>
+                  <li>
+                    <a href="#remove-clienthold-from-domain" class="toc-h2 toc-link" data-title="Remove clientHold from domain">Remove clientHold from domain</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#transfers" class="toc-h1 toc-link" data-title="Transfers">Transfers</a>
               <ul class="toc-list-h2">
                   <li>
@@ -920,77 +931,57 @@ Note — Wrap your payload attributes into "contact" object, as shown in example
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"domains"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kass.ee"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"registrar_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"valid_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-09-23T00:00:00.000+03:00"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"registrant_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-22T14:16:47.420+03:00"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-18T10:59:06.344+02:00"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"name_dirty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kass.ee"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"name_puny"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kass.ee"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"period"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"period_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"y"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"creator_str"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2-ApiUser: test"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"updator_str"</span><span class="p">:</span><span class="w"> </span><span class="s2">"job - DomainUpdateConfirmJob - confirmed by email link, user not authenticated"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"registrant"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ATSAA:KARL"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-29T11:15:52.753+02:00"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-29T11:15:52.753+02:00"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"expire_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-30T00:00:00.000+02:00"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"outzone_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"delete_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"registrant_verification_asked_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-18T10:59:05.240+02:00"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"registrant_verification_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6edd80c248db682a0c2b2e02877cdfc528243a59942fe05fae164848a5df9c5e4aa2a9875b1cf42c64b4"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"pending_json"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"force_delete_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"statuses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                    </span><span class="s2">"serverRenewProhibited"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"pendingUpdate"</span><span class="w">
+                </span><span class="nl">"authorization_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"378499652fe9f0075600bba06c3a2449"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ATSAA:KARL"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AdminDomainContact"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ATSAA:KARL"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TechDomainContact"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
                 </span><span class="p">],</span><span class="w">
-                </span><span class="nl">"status_notes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"ok"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"pendingDelete"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"pendingUpdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"serverRenewProhibited"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"upid"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"up_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-13T14:41:58.613+02:00"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6b6affa7-1449-4bd8-acf5-8b4752406705"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"locked_by_registrant_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"force_delete_start"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"force_delete_data"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"auth_info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"367b1e6d1f0d9aa190971ad8f571cd4d"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"valid_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-22T14:16:47.420+03:00"</span><span class="w">
+                </span><span class="nl">"nameservers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="nl">"dnssec_keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="nl">"statuses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="s2">"inactive"</span><span class="w">
+                </span><span class="p">]</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"koer.ee"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"registrar_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"valid_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-12-08T00:00:00.000+02:00"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"registrant_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-07T12:29:04.099+02:00"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-05T15:36:35.342+02:00"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"name_dirty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"koer.ee"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"name_puny"</span><span class="p">:</span><span class="w"> </span><span class="s2">"koer.ee"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"period"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"period_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"y"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"creator_str"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2-ApiUser: test"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"updator_str"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2-ApiUser: test"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"registrant"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ATSAA:KARL"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-29T11:16:23.679+02:00"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-29T11:16:23.679+02:00"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"expire_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-30T00:00:00.000+02:00"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"outzone_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"delete_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"registrant_verification_asked_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"registrant_verification_token"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"pending_json"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
                 </span><span class="nl">"force_delete_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"statuses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                    </span><span class="s2">"ok"</span><span class="w">
+                </span><span class="nl">"authorization_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"669031afb3bf93a8df55d29e33debc8c"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ATSAA:KARL"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AdminDomainContact"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ATSAA:KARL"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TechDomainContact"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
                 </span><span class="p">],</span><span class="w">
-                </span><span class="nl">"status_notes"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-                </span><span class="nl">"upid"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"up_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-05T15:36:35.080+02:00"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b43635ca-46c6-4af6-a852-fdb13dd69b7f"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"locked_by_registrant_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"force_delete_start"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"force_delete_data"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"auth_info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8b8f673ed4ac1fbc0147c75eb0e6aaa4"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"valid_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-07T12:29:04.099+02:00"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
+                </span><span class="nl">"nameservers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="nl">"dnssec_keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="nl">"statuses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="s2">"inactive"</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
         </span><span class="p">],</span><span class="w">
         </span><span class="nl">"total_number_of_records"</span><span class="p">:</span><span class="w"> </span><span class="mi">69</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -1039,58 +1030,30 @@ Note — Wrap your payload attributes into "contact" object, as shown in example
     </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Command completed successfully"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cd1be00a-58bb-4bee-9b5c-279e90bb5e24"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"biz.ee"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"registrar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20 ALLA OU"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://20alla.ee"</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="nl">"registered_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-15T12:07:20.079+02:00"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"valid_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-16T00:00:00.000+02:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"registrant"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ATSAA:749AA80F"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-15T12:07:20.079+02:00"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-21T16:41:59.707+02:00"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"registrant"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxx"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ca79c932-41ff-4d2e-8479-f0e58275e077"</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="nl">"tech_contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxx"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"020417df-cf4c-43ea-a454-9e300c504c61"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxx"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">],</span><span class="w">
-            </span><span class="nl">"admin_contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxx"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20417232-59a0-4dd3-b5db-243414724c0d"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxx"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">],</span><span class="w">
-            </span><span class="nl">"transfer_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2f81ec671b69a2aa5d6375631e259ae7"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"name_dirty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"biz.ee"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"name_puny"</span><span class="p">:</span><span class="w"> </span><span class="s2">"biz.ee"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"period"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"period_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"y"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"creator_str"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2-ApiUser: test"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"updator_str"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"expire_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-16T00:00:00.000+02:00"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"outzone_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="nl">"delete_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"registrant_verification_asked_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"registrant_verification_token"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"pending_json"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
             </span><span class="nl">"force_delete_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"statuses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="s2">"inactive"</span><span class="w">
+            </span><span class="nl">"authorization_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2f81ec671b69a2aa5d6375631e259ae7"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ATSAA:C7A52A30"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AdminDomainContact"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ATSAA:CC53EF9C"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TechDomainContact"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
             </span><span class="p">],</span><span class="w">
-            </span><span class="nl">"locked_by_registrant_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"status_notes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"pendingDelete"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"pendingUpdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
-            </span><span class="p">},</span><span class="w">
             </span><span class="nl">"nameservers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
             </span><span class="nl">"dnssec_keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-            </span><span class="nl">"dnssec_changed_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="nl">"statuses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"inactive"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1728,6 +1691,69 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 <td>Public key of existing DNSSEC key</td>
 </tr>
 </tbody></table>
+<h1 id='statuses'>Statuses</h1><h2 id='add-clienthold-to-domain'>Add clientHold to domain</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> PUT <span class="s1">'https://testrar.internet.ee/repp/v1/domains/biz.ee/statuses/clientHold'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Basic dGVzdDp0ZXN0MTIz'</span> <span class="se">\</span>
+<span class="nt">--data-raw</span> <span class="s1">''</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Command completed successfully"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"biz.ee"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clientHold"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Adds a clientHold status to a specific domain</p>
+<h3 id='http-request-21'>HTTP Request</h3>
+<p><code>PUT /repp/v1/domains/:domain_name/statuses/clientHold</code></p>
+<h3 id='url-parameters-16'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>domain_name</td>
+<td>Yes</td>
+<td>Domain name</td>
+</tr>
+</tbody></table>
+<h2 id='remove-clienthold-from-domain'>Remove clientHold from domain</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> DELETE <span class="s1">'https://testrar.internet.ee/repp/v1/domains/biz.ee/statuses/clientHold'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Basic dGVzdDp0ZXN0MTIz'</span> <span class="se">\</span>
+<span class="nt">--data-raw</span> <span class="s1">''</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Command completed successfully"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Removes clientHold status from specific domain</p>
+<h3 id='http-request-22'>HTTP Request</h3>
+<p><code>DELETE /repp/v1/domains/:domain_name/statuses/clientHold</code></p>
+<h3 id='url-parameters-17'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>domain_name</td>
+<td>Yes</td>
+<td>Domain name</td>
+</tr>
+</tbody></table>
 <h1 id='transfers'>Transfers</h1><h2 id='get-transfer-info'>Get transfer info</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://testrar.internet.ee/repp/v1/domains/kotlet.ee/transfer_info'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Auth-Code: 6699fb661ee3a2006a3d1e5833d7c5abv'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Basic dGVzdDp0ZXN0MTIz'</span> <span class="se">\</span>
@@ -1800,9 +1826,9 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Gets a specific domain&#39;s transfer info</p>
-<h3 id='http-request-21'>HTTP Request</h3>
+<h3 id='http-request-23'>HTTP Request</h3>
 <p><code>GET /repp/v1/domains/:domain_name/transfer_info</code></p>
-<h3 id='url-parameters-16'>URL Parameters</h3>
+<h3 id='url-parameters-18'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1856,9 +1882,9 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Transfers domain from another registrar to your account.</p>
-<h3 id='http-request-22'>HTTP Request</h3>
+<h3 id='http-request-24'>HTTP Request</h3>
 <p><code>POST /repp/v1/domains/:domain_name/transfer</code></p>
-<h3 id='url-parameters-17'>URL Parameters</h3>
+<h3 id='url-parameters-19'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1934,7 +1960,7 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Transfers multiple domains from another registrar to your account.</p>
-<h3 id='http-request-23'>HTTP Request</h3>
+<h3 id='http-request-25'>HTTP Request</h3>
 <p><code>POST /repp/v1/domains/transfer</code></p>
 <h3 id='payload-parameters-11'>Payload Parameters</h3>
 <table><thead>
@@ -2000,7 +2026,7 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cycles through every domain and replaces specific tech contact with another one.</p>
-<h3 id='http-request-24'>HTTP Request</h3>
+<h3 id='http-request-26'>HTTP Request</h3>
 <p><code>PATCH /repp/v1/domains/contacts</code></p>
 <h3 id='payload-parameters-12'>Payload Parameters</h3>
 <table><thead>
@@ -2086,7 +2112,7 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cycles through every domain and replaces their specific nameserver with new data.</p>
-<h3 id='http-request-25'>HTTP Request</h3>
+<h3 id='http-request-27'>HTTP Request</h3>
 <p><code>PATCH /repp/v1/domains/contacts</code></p>
 <h3 id='payload-parameters-13'>Payload Parameters</h3>
 <table><thead>
@@ -2173,7 +2199,7 @@ Note - It's safer to use "domains" scope, although it's not required. If you don
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Renews multiple domanins at once, for a fixed period.</p>
-<h3 id='http-request-26'>HTTP Request</h3>
+<h3 id='http-request-28'>HTTP Request</h3>
 <p><code>POST /repp/v1/domains/renew/bulk</code></p>
 <h3 id='payload-parameters-14'>Payload Parameters</h3>
 <table><thead>
