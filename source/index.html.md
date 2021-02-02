@@ -487,77 +487,57 @@ curl --location --request GET 'https://testrar.internet.ee/repp/v1/domains' \
     "data": {
         "domains": [
             {
-                "id": 7,
                 "name": "kass.ee",
-                "registrar_id": 2,
-                "valid_to": "2022-09-23T00:00:00.000+03:00",
-                "registrant_id": 12,
-                "created_at": "2020-09-22T14:16:47.420+03:00",
-                "updated_at": "2020-11-18T10:59:06.344+02:00",
-                "name_dirty": "kass.ee",
-                "name_puny": "kass.ee",
-                "period": 1,
-                "period_unit": "y",
-                "creator_str": "2-ApiUser: test",
-                "updator_str": "job - DomainUpdateConfirmJob - confirmed by email link, user not authenticated",
+                "registrant": "ATSAA:KARL",
+                "created_at": "2021-01-29T11:15:52.753+02:00",
+                "updated_at": "2021-01-29T11:15:52.753+02:00",
+                "expire_time": "2022-01-30T00:00:00.000+02:00",
                 "outzone_at": null,
                 "delete_date": null,
-                "registrant_verification_asked_at": "2020-11-18T10:59:05.240+02:00",
-                "registrant_verification_token": "6edd80c248db682a0c2b2e02877cdfc528243a59942fe05fae164848a5df9c5e4aa2a9875b1cf42c64b4",
-                "pending_json": null,
                 "force_delete_date": null,
-                "statuses": [
-                    "serverRenewProhibited",
-                    "pendingUpdate"
+                "authorization_code": "378499652fe9f0075600bba06c3a2449",
+                "contacts": [
+                    {
+                        "code": "ATSAA:KARL",
+                        "type": "AdminDomainContact"
+                    },
+                    {
+                        "code": "ATSAA:KARL",
+                        "type": "TechDomainContact"
+                    }
                 ],
-                "status_notes": {
-                    "ok": "",
-                    "pendingDelete": "",
-                    "pendingUpdate": "",
-                    "serverRenewProhibited": ""
-                },
-                "upid": 2,
-                "up_date": "2020-11-13T14:41:58.613+02:00",
-                "uuid": "6b6affa7-1449-4bd8-acf5-8b4752406705",
-                "locked_by_registrant_at": null,
-                "force_delete_start": null,
-                "force_delete_data": null,
-                "auth_info": "367b1e6d1f0d9aa190971ad8f571cd4d",
-                "valid_from": "2020-09-22T14:16:47.420+03:00"
+                "nameservers": [],
+                "dnssec_keys": [],
+                "statuses": [
+                    "inactive"
+                ]
             },
             {
-                "id": 19,
                 "name": "koer.ee",
-                "registrar_id": 2,
-                "valid_to": "2025-12-08T00:00:00.000+02:00",
-                "registrant_id": 12,
-                "created_at": "2020-12-07T12:29:04.099+02:00",
-                "updated_at": "2021-01-05T15:36:35.342+02:00",
-                "name_dirty": "koer.ee",
-                "name_puny": "koer.ee",
-                "period": 1,
-                "period_unit": "y",
-                "creator_str": "2-ApiUser: test",
-                "updator_str": "2-ApiUser: test",
+                "registrant": "ATSAA:KARL",
+                "created_at": "2021-01-29T11:16:23.679+02:00",
+                "updated_at": "2021-01-29T11:16:23.679+02:00",
+                "expire_time": "2022-01-30T00:00:00.000+02:00",
                 "outzone_at": null,
                 "delete_date": null,
-                "registrant_verification_asked_at": null,
-                "registrant_verification_token": null,
-                "pending_json": {},
                 "force_delete_date": null,
-                "statuses": [
-                    "ok"
+                "authorization_code": "669031afb3bf93a8df55d29e33debc8c",
+                "contacts": [
+                    {
+                        "code": "ATSAA:KARL",
+                        "type": "AdminDomainContact"
+                    },
+                    {
+                        "code": "ATSAA:KARL",
+                        "type": "TechDomainContact"
+                    }
                 ],
-                "status_notes": {},
-                "upid": 2,
-                "up_date": "2021-01-05T15:36:35.080+02:00",
-                "uuid": "b43635ca-46c6-4af6-a852-fdb13dd69b7f",
-                "locked_by_registrant_at": null,
-                "force_delete_start": null,
-                "force_delete_data": null,
-                "auth_info": "8b8f673ed4ac1fbc0147c75eb0e6aaa4",
-                "valid_from": "2020-12-07T12:29:04.099+02:00"
-            }
+                "nameservers": [],
+                "dnssec_keys": [],
+                "statuses": [
+                    "inactive"
+                ]
+            },
         ],
         "total_number_of_records": 69
     }
@@ -594,58 +574,30 @@ curl --location --request GET 'https://testrar.internet.ee/repp/v1/domains/biz.e
     "message": "Command completed successfully",
     "data": {
         "domain": {
-            "id": "cd1be00a-58bb-4bee-9b5c-279e90bb5e24",
             "name": "biz.ee",
-            "registrar": {
-                "name": "20 ALLA OU",
-                "website": "https://20alla.ee"
-            },
-            "registered_at": "2021-01-15T12:07:20.079+02:00",
-            "valid_to": "2023-01-16T00:00:00.000+02:00",
+            "registrant": "ATSAA:749AA80F",
             "created_at": "2021-01-15T12:07:20.079+02:00",
             "updated_at": "2021-01-21T16:41:59.707+02:00",
-            "registrant": {
-                "name": "xxx",
-                "id": "ca79c932-41ff-4d2e-8479-f0e58275e077"
-            },
-            "tech_contacts": [
-                {
-                    "name": "xxx",
-                    "id": "020417df-cf4c-43ea-a454-9e300c504c61",
-                    "email": "xxx"
-                }
-            ],
-            "admin_contacts": [
-                {
-                    "name": "xxx",
-                    "id": "20417232-59a0-4dd3-b5db-243414724c0d",
-                    "email": "xxx"
-                }
-            ],
-            "transfer_code": "2f81ec671b69a2aa5d6375631e259ae7",
-            "name_dirty": "biz.ee",
-            "name_puny": "biz.ee",
-            "period": 1,
-            "period_unit": "y",
-            "creator_str": "2-ApiUser: test",
-            "updator_str": "test",
+            "expire_time": "2023-01-16T00:00:00.000+02:00",
             "outzone_at": null,
             "delete_date": null,
-            "registrant_verification_asked_at": null,
-            "registrant_verification_token": null,
-            "pending_json": {},
             "force_delete_date": null,
-            "statuses": [
-                "inactive"
+            "authorization_code": "2f81ec671b69a2aa5d6375631e259ae7",
+            "contacts": [
+                {
+                    "code": "ATSAA:C7A52A30",
+                    "type": "AdminDomainContact"
+                },
+                {
+                    "code": "ATSAA:CC53EF9C",
+                    "type": "TechDomainContact"
+                }
             ],
-            "locked_by_registrant_at": null,
-            "status_notes": {
-                "pendingDelete": "",
-                "pendingUpdate": ""
-            },
             "nameservers": [],
             "dnssec_keys": [],
-            "dnssec_changed_at": null
+            "statuses": [
+                "inactive"
+            ]
         }
     }
 }
@@ -1078,6 +1030,70 @@ dns_keys[protocol] | Yes | String | Key protocol of existing DNSSEC key
 dns_keys[alg] | Yes | String | DNSSEC key algorithm of existing DNSSEC key
 dns_keys[public_key] | Yes | String | Public key of existing DNSSEC key
 
+# Statuses
+
+## Add clientHold to domain
+
+```shell
+curl --location --request PUT 'https://testrar.internet.ee/repp/v1/domains/biz.ee/statuses/clientHold' \
+--header 'Authorization: Basic dGVzdDp0ZXN0MTIz' \
+--data-raw ''
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "code": 1000,
+    "message": "Command completed successfully",
+    "data": {
+        "domain": "biz.ee",
+        "status": "clientHold"
+    }
+}
+```
+
+Adds a clientHold status to a specific domain
+
+### HTTP Request
+
+`PUT /repp/v1/domains/:domain_name/statuses/clientHold`
+
+### URL Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+domain_name | Yes | Domain name
+
+## Remove clientHold from domain
+
+```shell
+curl --location --request DELETE 'https://testrar.internet.ee/repp/v1/domains/biz.ee/statuses/clientHold' \
+--header 'Authorization: Basic dGVzdDp0ZXN0MTIz' \
+--data-raw ''
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "code": 1000,
+    "message": "Command completed successfully",
+    "data": {}
+}
+```
+
+Removes clientHold status from specific domain
+
+### HTTP Request
+
+`DELETE /repp/v1/domains/:domain_name/statuses/clientHold`
+
+### URL Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+domain_name | Yes | Domain name
 # Transfers
 
 ## Get transfer info
