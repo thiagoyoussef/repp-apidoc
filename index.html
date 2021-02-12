@@ -550,7 +550,7 @@ You must replace <code>dGVzdDp0ZXN0MTIz</code> with your personal API key.
 </span></code></pre></div>
 <p>Mark poll message as read</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>PUT /repp/v1/registrar/notifications/:notification_id</code></p>
+<p><code>GET /repp/v1/registrar/notifications/:notification_id</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -632,7 +632,7 @@ You must replace <code>dGVzdDp0ZXN0MTIz</code> with your personal API key.
 </span></code></pre></div>
 <p>Get all contacts</p>
 <h3 id='http-request-5'>HTTP Request</h3>
-<p><code>GET /repp/v1/registrar/contacts</code></p>
+<p><code>GET /repp/v1/contacts</code></p>
 <h2 id='get-a-specific-contact'>Get a specific contact</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://testrar.internet.ee/repp/v1/contacts/ATSAA:KARL'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Basic dGVzdDp0ZXN0MTIz'</span> <span class="se">\</span>
 <span class="nt">--data-raw</span> <span class="s1">''</span>
@@ -2111,9 +2111,10 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Cycles through every domain and replaces their specific nameserver with new data.</p>
+<p>Cycles through every domain and replaces their specific nameserver with new data.
+The new new hostname of the nameserver must be different. It&#39;s not possible to change existing nameserver&#39;s IPv4 / IPv6 addresses with this request.</p>
 <h3 id='http-request-27'>HTTP Request</h3>
-<p><code>PATCH /repp/v1/domains/contacts</code></p>
+<p><code>PUT /repp/v1/registrar/nameservers</code></p>
 <h3 id='payload-parameters-13'>Payload Parameters</h3>
 <table><thead>
 <tr>
