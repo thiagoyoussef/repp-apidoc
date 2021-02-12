@@ -143,7 +143,7 @@ Mark poll message as read
 
 ### HTTP Request
 
-`PUT /repp/v1/registrar/notifications/:notification_id`
+`GET /repp/v1/registrar/notifications/:notification_id`
 
 ### URL Parameters
 
@@ -219,7 +219,7 @@ Get all contacts
 
 ### HTTP Request
 
-`GET /repp/v1/registrar/contacts`
+`GET /repp/v1/contacts`
 
 ## Get a specific contact
 
@@ -1414,10 +1414,11 @@ curl --location --request PUT 'https://testrar.internet.ee/repp/v1/registrar/nam
 ```
 
 Cycles through every domain and replaces their specific nameserver with new data.
+The new new hostname of the nameserver must be different. It's not possible to change existing nameserver's IPv4 / IPv6 addresses with this request.
 
 ### HTTP Request
 
-`PATCH /repp/v1/domains/contacts`
+`PUT /repp/v1/registrar/nameservers`
 
 ### Payload Parameters
 
