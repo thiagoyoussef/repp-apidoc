@@ -76,12 +76,47 @@ curl --location --request GET 'https://testrar.internet.ee/repp/v1/accounts/bala
 }
 ```
 
+> Command above with detailed=true flag returns JSON structured like this:
+
+```json
+{
+    "code": 1000,
+    "message": "Command completed successfully",
+    "data": {
+        "balance": "420.0",
+        "currency": "EUR",
+        "transactions": [
+            {
+                "created_at": "2021-02-26T17:12:46.045+02:00",
+                "description": "Create abadiitas.ee",
+                "type": "debit",
+                "sum": "-6.0",
+                "balance": "420.0"
+            },
+            {
+                "created_at": "2021-02-11T11:32:49.158+02:00",
+                "description": "Invoice no. 131096",
+                "type": "credit",
+                "sum": "100.0",
+                "balance": "426.0"
+            }
+        ]
+    }
+}
+```
 Get account balance
 
 ### HTTP Request
 
 `GET /repp/v1/accounts/balance`
 
+### URL Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+detailed | False | Set to true to get detailed transaction data
+from | False | Show detailed transactions starting from datetime (yyyy-mm-dd)
+until | False | Show detailed transactions created before datetime (yyyy-mm-dd)
 # Poll messages
 
 ## Get latest unread poll message
