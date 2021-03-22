@@ -383,6 +383,9 @@
             <a href="#nameservers" class="toc-h1 toc-link" data-title="Nameservers">Nameservers</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#get-domain-39-s-nameservers" class="toc-h2 toc-link" data-title="Get domain's nameservers">Get domain's nameservers</a>
+                  </li>
+                  <li>
                     <a href="#add-new-nameserver" class="toc-h2 toc-link" data-title="Add new nameserver">Add new nameserver</a>
                   </li>
                   <li>
@@ -1432,7 +1435,50 @@ Note — Wrap your payload attributes into "domain" object, as shown in example.
 <aside class="notice">
 Note — Wrap your payload attributes into "renew" object, as shown in example.
 </aside>
-<h1 id='nameservers'>Nameservers</h1><h2 id='add-new-nameserver'>Add new nameserver</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://testrar.internet.ee/repp/v1/domains/kotlet.ee/nameservers'</span> <span class="se">\</span>
+<h1 id='nameservers'>Nameservers</h1><h2 id='get-domain-39-s-nameservers'>Get domain&#39;s nameservers</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://testrar.internet.ee/repp/v1/domains/domeener.ee/nameservers'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Basic dGVzdDp0ZXN0MTIz'</span> <span class="se">\</span>
+<span class="nt">--data-raw</span> <span class="s1">''</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Command completed successfully"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"nameservers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"hostname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ns1.domeener.ee"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"ipv4"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"192.168.1.1"</span><span class="p">],</span><span class="w">
+                </span><span class="nl">"ipv6"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"fe80::aede:48ff:fe00:1122"</span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"hostname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ns2.domeener.ee"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"ipv4"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"192.168.1.2"</span><span class="p">],</span><span class="w">
+                </span><span class="nl">"ipv6"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"fe80::aede:48ff:fe00:1123"</span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Gets a specific domain&#39;s nameservers</p>
+<h3 id='http-request-16'>HTTP Request</h3>
+<p><code>GET /repp/v1/domains/:domain_name/nameservers</code></p>
+<h3 id='url-parameters-12'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>domain_name</td>
+<td>Yes</td>
+<td>Domain name</td>
+</tr>
+</tbody></table>
+<h2 id='add-new-nameserver'>Add new nameserver</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://testrar.internet.ee/repp/v1/domains/kotlet.ee/nameservers'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Basic dGVzdDp0ZXN0MTIz'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
 <span class="nt">--data-raw</span> <span class="s1">'{
@@ -1459,9 +1505,9 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Add new nameserver(s) to specific domain</p>
-<h3 id='http-request-16'>HTTP Request</h3>
+<h3 id='http-request-17'>HTTP Request</h3>
 <p><code>POST /repp/v1/domains/:domain_name/nameservers</code></p>
-<h3 id='url-parameters-12'>URL Parameters</h3>
+<h3 id='url-parameters-13'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1527,9 +1573,9 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Delete existing nameserver from domain.</p>
-<h3 id='http-request-17'>HTTP Request</h3>
+<h3 id='http-request-18'>HTTP Request</h3>
 <p><code>DELETE /repp/v1/domains/:domain_name/nameservers/:nameserver_hostname</code></p>
-<h3 id='url-parameters-13'>URL Parameters</h3>
+<h3 id='url-parameters-14'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1571,9 +1617,9 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Gets a specific domain&#39;s DNSSEC keys</p>
-<h3 id='http-request-18'>HTTP Request</h3>
+<h3 id='http-request-19'>HTTP Request</h3>
 <p><code>GET /repp/v1/domains/:domain_name/dnssec</code></p>
-<h3 id='url-parameters-14'>URL Parameters</h3>
+<h3 id='url-parameters-15'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1615,9 +1661,9 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Add new DNSSEC key(s) to specific domain</p>
-<h3 id='http-request-19'>HTTP Request</h3>
+<h3 id='http-request-20'>HTTP Request</h3>
 <p><code>POST /repp/v1/domains/:domain_name/dnssec</code></p>
-<h3 id='url-parameters-15'>URL Parameters</h3>
+<h3 id='url-parameters-16'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1699,9 +1745,9 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Deletes one or many DNSSEC key(s) for specific domain.</p>
-<h3 id='http-request-20'>HTTP Request</h3>
+<h3 id='http-request-21'>HTTP Request</h3>
 <p><code>DELETE /repp/v1/domains/:domain_name/dnssec</code></p>
-<h3 id='url-parameters-16'>URL Parameters</h3>
+<h3 id='url-parameters-17'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1772,9 +1818,9 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Adds a clientHold status to a specific domain</p>
-<h3 id='http-request-21'>HTTP Request</h3>
+<h3 id='http-request-22'>HTTP Request</h3>
 <p><code>PUT /repp/v1/domains/:domain_name/statuses/clientHold</code></p>
-<h3 id='url-parameters-17'>URL Parameters</h3>
+<h3 id='url-parameters-18'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1802,9 +1848,9 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Removes clientHold status from specific domain</p>
-<h3 id='http-request-22'>HTTP Request</h3>
+<h3 id='http-request-23'>HTTP Request</h3>
 <p><code>DELETE /repp/v1/domains/:domain_name/statuses/clientHold</code></p>
-<h3 id='url-parameters-18'>URL Parameters</h3>
+<h3 id='url-parameters-19'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1890,9 +1936,9 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Gets a specific domain&#39;s transfer info</p>
-<h3 id='http-request-23'>HTTP Request</h3>
+<h3 id='http-request-24'>HTTP Request</h3>
 <p><code>GET /repp/v1/domains/:domain_name/transfer_info</code></p>
-<h3 id='url-parameters-19'>URL Parameters</h3>
+<h3 id='url-parameters-20'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1946,9 +1992,9 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Transfers domain from another registrar to your account.</p>
-<h3 id='http-request-24'>HTTP Request</h3>
+<h3 id='http-request-25'>HTTP Request</h3>
 <p><code>POST /repp/v1/domains/:domain_name/transfer</code></p>
-<h3 id='url-parameters-20'>URL Parameters</h3>
+<h3 id='url-parameters-21'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2024,7 +2070,7 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Transfers multiple domains from another registrar to your account.</p>
-<h3 id='http-request-25'>HTTP Request</h3>
+<h3 id='http-request-26'>HTTP Request</h3>
 <p><code>POST /repp/v1/domains/transfer</code></p>
 <h3 id='payload-parameters-11'>Payload Parameters</h3>
 <table><thead>
@@ -2090,7 +2136,7 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cycles through every domain and replaces specific tech contact with another one.</p>
-<h3 id='http-request-26'>HTTP Request</h3>
+<h3 id='http-request-27'>HTTP Request</h3>
 <p><code>PATCH /repp/v1/domains/contacts</code></p>
 <h3 id='payload-parameters-12'>Payload Parameters</h3>
 <table><thead>
@@ -2177,7 +2223,7 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span></code></pre></div>
 <p>Cycles through every domain and replaces their specific nameserver with new data.
 The new new hostname of the nameserver must be different. It&#39;s not possible to change existing nameserver&#39;s IPv4 / IPv6 addresses with this request.</p>
-<h3 id='http-request-27'>HTTP Request</h3>
+<h3 id='http-request-28'>HTTP Request</h3>
 <p><code>PUT /repp/v1/registrar/nameservers</code></p>
 <h3 id='payload-parameters-13'>Payload Parameters</h3>
 <table><thead>
@@ -2264,7 +2310,7 @@ Note - It's safer to use "domains" scope, although it's not required. If you don
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Renews multiple domanins at once, for a fixed period.</p>
-<h3 id='http-request-28'>HTTP Request</h3>
+<h3 id='http-request-29'>HTTP Request</h3>
 <p><code>POST /repp/v1/domains/renew/bulk</code></p>
 <h3 id='payload-parameters-14'>Payload Parameters</h3>
 <table><thead>
