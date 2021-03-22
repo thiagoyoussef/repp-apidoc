@@ -530,7 +530,7 @@ curl --location --request GET 'https://testrar.internet.ee/repp/v1/domains' \
                 "outzone_at": null,
                 "delete_date": null,
                 "force_delete_date": null,
-                "authorization_code": "378499652fe9f0075600bba06c3a2449",
+                "transfer_code": "378499652fe9f0075600bba06c3a2449",
                 "contacts": [
                     {
                         "code": "ATSAA:KARL",
@@ -556,7 +556,7 @@ curl --location --request GET 'https://testrar.internet.ee/repp/v1/domains' \
                 "outzone_at": null,
                 "delete_date": null,
                 "force_delete_date": null,
-                "authorization_code": "669031afb3bf93a8df55d29e33debc8c",
+                "transfer_code": "669031afb3bf93a8df55d29e33debc8c",
                 "contacts": [
                     {
                         "code": "ATSAA:KARL",
@@ -617,7 +617,7 @@ curl --location --request GET 'https://testrar.internet.ee/repp/v1/domains/biz.e
             "outzone_at": null,
             "delete_date": null,
             "force_delete_date": null,
-            "authorization_code": "2f81ec671b69a2aa5d6375631e259ae7",
+            "transfer_code": "2f81ec671b69a2aa5d6375631e259ae7",
             "contacts": [
                 {
                     "code": "ATSAA:C7A52A30",
@@ -702,6 +702,8 @@ Register a new domain
 Parameter | Required | Type | Description
 --------- | ------- | ----- | -----------
 name | Yes | String | Domain name
+reserved_pw | No | String | Reserved password for domain
+transfer_code | No | String | Desired transfer code for domain
 registrant | Yes | String | Registrant contact code
 period_unit | Yes | String | Period unit. Can be year (y) or month (m)
 period | Yes | Integer | For how many period units to register domain
@@ -732,7 +734,7 @@ curl --location --request PUT 'https://testrar.internet.ee/repp/v1/domains/kassk
         "registrant": {
             "code": "ATSAA:LIZ"
         },
-        "auth_info": "123"
+        "transfer_code": "123"
     }
 }'
 ```
@@ -755,7 +757,7 @@ Changes domain registrant or auth code
 
 ### HTTP Request
 
-`POST /repp/v1/domains/:domain_name`
+`PUT /repp/v1/domains/:domain_name`
 
 ### URL Parameters
 Parameter | Required | Type | Description
@@ -770,7 +772,7 @@ Parameter | Required | Type | Description
 registrant | Yes | Object | New registrant object
 registrant[code] | Yes | String | Contact ID of new registrant
 registrant[verified] | No | Boolean | Defaults to false. Include it only if set to true.
-auth_info | No | String | New EPP authorization code for domain
+transfer_code | No | String | New EPP transfer code for domain
 
 <aside class="notice">
 Note — Wrap your payload attributes into "domain" object, as shown in example.
