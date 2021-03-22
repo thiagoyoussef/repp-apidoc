@@ -662,10 +662,10 @@ curl --location --request POST 'https://testrar.internet.ee/repp/v1/domains' \
         "registrant_id": "ATSAA:KARL",
         "period": 1,
         "period_unit": "y",
-        "admin_domain_contacts_attributes": [
+        "admin_contacts": [
             "ATSAA:KARL"
         ],
-        "tech_domain_contacts_attributes": [
+        "tech_contacts": [
             "ATSAA:KARL"
         ],
         "nameservers_attributes": [
@@ -705,8 +705,8 @@ name | Yes | String | Domain name
 registrant_id | Yes | String | Registrant contact code
 period_unit | Yes | String | Period unit. Can be year (y) or month (m)
 period | Yes | Integer | For how many period units to register domain
-admin_domain_contact_attributes | No | Array | Array of admin domain contact codes
-tech_domain_contact_attributes | No | Array | Array of tech domain contact codes
+admin_contacts | No | Array | Array of admin domain contact codes
+tech_contacts | No | Array | Array of tech domain contact codes
 nameservers_attributes | No | Array | Array of nameserver objects
 nameservers_attributes[hostname] | Yes | String | Hostname of nameserver
 nameservers_attributes[ipv4] | Yes | Array | Array of IPv4 attributes
