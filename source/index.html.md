@@ -831,6 +831,49 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 
 # Nameservers
 
+## Get domain's nameservers
+
+```shell
+curl --location --request GET 'https://testrar.internet.ee/repp/v1/domains/domeener.ee/nameservers' \
+--header 'Authorization: Basic dGVzdDp0ZXN0MTIz' \
+--data-raw ''
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "code": 1000,
+    "message": "Command completed successfully",
+    "data": {
+        "nameservers": [
+            {
+                "hostname": "ns1.domeener.ee",
+                "ipv4": ["192.168.1.1"],
+                "ipv6": ["fe80::aede:48ff:fe00:1122"]
+            },
+            {
+                "hostname": "ns2.domeener.ee",
+                "ipv4": ["192.168.1.2"],
+                "ipv6": ["fe80::aede:48ff:fe00:1123"]
+            },
+        ]
+    }
+}
+```
+
+Gets a specific domain's nameservers
+
+### HTTP Request
+
+`GET /repp/v1/domains/:domain_name/nameservers`
+
+### URL Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+domain_name | Yes | Domain name
+
 ## Add new nameserver
 
 ```shell
