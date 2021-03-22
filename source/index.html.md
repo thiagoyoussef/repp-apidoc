@@ -659,7 +659,7 @@ curl --location --request POST 'https://testrar.internet.ee/repp/v1/domains' \
 --data-raw '{
     "domain": {
         "name": "kasskoer.ee",
-        "registrant_id": "ATSAA:KARL",
+        "registrant": "ATSAA:KARL",
         "period": 1,
         "period_unit": "y",
         "admin_contacts": [
@@ -702,7 +702,7 @@ Register a new domain
 Parameter | Required | Type | Description
 --------- | ------- | ----- | -----------
 name | Yes | String | Domain name
-registrant_id | Yes | String | Registrant contact code
+registrant | Yes | String | Registrant contact code
 period_unit | Yes | String | Period unit. Can be year (y) or month (m)
 period | Yes | Integer | For how many period units to register domain
 admin_contacts | No | Array | Array of admin domain contact codes
