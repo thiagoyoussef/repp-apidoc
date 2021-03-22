@@ -991,7 +991,7 @@ Note — Wrap your payload attributes into "contact" object, as shown in example
                 </span><span class="nl">"outzone_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"delete_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"force_delete_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"authorization_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"378499652fe9f0075600bba06c3a2449"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"transfer_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"378499652fe9f0075600bba06c3a2449"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                     </span><span class="p">{</span><span class="w">
                         </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ATSAA:KARL"</span><span class="p">,</span><span class="w">
@@ -1017,7 +1017,7 @@ Note — Wrap your payload attributes into "contact" object, as shown in example
                 </span><span class="nl">"outzone_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"delete_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"force_delete_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"authorization_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"669031afb3bf93a8df55d29e33debc8c"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"transfer_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"669031afb3bf93a8df55d29e33debc8c"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                     </span><span class="p">{</span><span class="w">
                         </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ATSAA:KARL"</span><span class="p">,</span><span class="w">
@@ -1090,7 +1090,7 @@ Note — Wrap your payload attributes into "contact" object, as shown in example
             </span><span class="nl">"outzone_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="nl">"delete_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="nl">"force_delete_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"authorization_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2f81ec671b69a2aa5d6375631e259ae7"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"transfer_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2f81ec671b69a2aa5d6375631e259ae7"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ATSAA:C7A52A30"</span><span class="p">,</span><span class="w">
@@ -1133,13 +1133,13 @@ Note — Wrap your payload attributes into "contact" object, as shown in example
 <span class="nt">--data-raw</span> <span class="s1">'{
     "domain": {
         "name": "kasskoer.ee",
-        "registrant_id": "ATSAA:KARL",
+        "registrant": "ATSAA:KARL",
         "period": 1,
         "period_unit": "y",
-        "admin_domain_contacts_attributes": [
+        "admin_contacts": [
             "ATSAA:KARL"
         ],
-        "tech_domain_contacts_attributes": [
+        "tech_contacts": [
             "ATSAA:KARL"
         ],
         "nameservers_attributes": [
@@ -1182,7 +1182,19 @@ Note — Wrap your payload attributes into "contact" object, as shown in example
 <td>Domain name</td>
 </tr>
 <tr>
-<td>registrant_id</td>
+<td>reserved_pw</td>
+<td>No</td>
+<td>String</td>
+<td>Reserved password for domain</td>
+</tr>
+<tr>
+<td>transfer_code</td>
+<td>No</td>
+<td>String</td>
+<td>Desired transfer code for domain</td>
+</tr>
+<tr>
+<td>registrant</td>
 <td>Yes</td>
 <td>String</td>
 <td>Registrant contact code</td>
@@ -1200,13 +1212,13 @@ Note — Wrap your payload attributes into "contact" object, as shown in example
 <td>For how many period units to register domain</td>
 </tr>
 <tr>
-<td>admin_domain_contact_attributes</td>
+<td>admin_contacts</td>
 <td>No</td>
 <td>Array</td>
 <td>Array of admin domain contact codes</td>
 </tr>
 <tr>
-<td>tech_domain_contact_attributes</td>
+<td>tech_contacts</td>
 <td>No</td>
 <td>Array</td>
 <td>Array of tech domain contact codes</td>
@@ -1278,7 +1290,7 @@ Note — Wrap your payload attributes into "domain" object, as shown in example.
         "registrant": {
             "code": "ATSAA:LIZ"
         },
-        "auth_info": "123"
+        "transfer_code": "123"
     }
 }'</span>
 </code></pre></div>
@@ -1297,7 +1309,7 @@ Note — Wrap your payload attributes into "domain" object, as shown in example.
 </span></code></pre></div>
 <p>Changes domain registrant or auth code</p>
 <h3 id='http-request-14'>HTTP Request</h3>
-<p><code>POST /repp/v1/domains/:domain_name</code></p>
+<p><code>PUT /repp/v1/domains/:domain_name</code></p>
 <h3 id='url-parameters-10'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1342,10 +1354,10 @@ Note — Wrap your payload attributes into "domain" object, as shown in example.
 <td>Defaults to false. Include it only if set to true.</td>
 </tr>
 <tr>
-<td>auth_info</td>
+<td>transfer_code</td>
 <td>No</td>
 <td>String</td>
-<td>New EPP authorization code for domain</td>
+<td>New EPP transfer code for domain</td>
 </tr>
 </tbody></table>
 
