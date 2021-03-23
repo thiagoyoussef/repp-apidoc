@@ -801,7 +801,8 @@ curl --location --request POST 'https://testrar.internet.ee/repp/v1/domains/kass
 --data-raw '{
     "renew": {
         "period": 1,
-        "period_unit": "y"
+        "period_unit": "y",
+        "exp_date": "2021-04-20"
     }
 }'
 ```
@@ -838,6 +839,7 @@ Parameter | Required | Type | Description
 --------- | ------- | ----- | -----------
 period_unit | Yes | String | Period unit. Can be year (y) or month (m)
 period | Yes | Integer | For how many period units to register domain
+exp_date | Yes | String | Current expiry date for domain (yyyy-mm-dd)
 
 <aside class="notice">
 Note — Wrap your payload attributes into "renew" object, as shown in example.
