@@ -708,7 +708,6 @@ You must replace <code>dGVzdDp0ZXN0MTIz</code> with your personal API key.
         </span><span class="p">},</span><span class="w">
         </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxx@xxx.ee"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+xxx"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"fax"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="nl">"auth_info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ed33c67bedb32b1567b131"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"statuses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
@@ -1009,7 +1008,12 @@ Note — Wrap your payload attributes into "contact" object, as shown in example
                 </span><span class="nl">"dnssec_keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
                 </span><span class="nl">"statuses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                     </span><span class="s2">"inactive"</span><span class="w">
-                </span><span class="p">]</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"registrar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kreative Digital OÜ"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://kreative.ee"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"transfer_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2f81ec671b69a2aa5d6375631e259ae7"</span><span class="p">,</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"koer.ee"</span><span class="p">,</span><span class="w">
@@ -1035,7 +1039,12 @@ Note — Wrap your payload attributes into "contact" object, as shown in example
                 </span><span class="nl">"dnssec_keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
                 </span><span class="nl">"statuses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                     </span><span class="s2">"inactive"</span><span class="w">
-                </span><span class="p">]</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"registrar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kreative Digital OÜ"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://kreative.ee"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"transfer_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdf564cs89er3dg46d5f3v1df6534g3f2"</span><span class="p">,</span><span class="w">
             </span><span class="p">},</span><span class="w">
         </span><span class="p">],</span><span class="w">
         </span><span class="nl">"total_number_of_records"</span><span class="p">:</span><span class="w"> </span><span class="mi">69</span><span class="w">
@@ -1093,7 +1102,6 @@ Note — Wrap your payload attributes into "contact" object, as shown in example
             </span><span class="nl">"outzone_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="nl">"delete_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="nl">"force_delete_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"transfer_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2f81ec671b69a2aa5d6375631e259ae7"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ATSAA:C7A52A30"</span><span class="p">,</span><span class="w">
@@ -1108,12 +1116,18 @@ Note — Wrap your payload attributes into "contact" object, as shown in example
             </span><span class="nl">"dnssec_keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
             </span><span class="nl">"statuses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="s2">"inactive"</span><span class="w">
-            </span><span class="p">]</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"registrar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kreative Digital OÜ"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://kreative.ee"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"transfer_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2f81ec671b69a2aa5d6375631e259ae7"</span><span class="p">,</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Gets a specific domain object</p>
+<p>Returns a specific domain object, even if it doesn&#39;t belong to your registrar account.
+If you aren&#39;t sponsoring registrar for the domain, transfer_code is omitted from the response.</p>
 <h3 id='http-request-12'>HTTP Request</h3>
 <p><code>GET /repp/v1/domains/:domain_name</code></p>
 <h3 id='url-parameters-9'>URL Parameters</h3>
