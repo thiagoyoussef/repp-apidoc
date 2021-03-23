@@ -544,7 +544,12 @@ curl --location --request GET 'https://testrar.internet.ee/repp/v1/domains' \
                 "dnssec_keys": [],
                 "statuses": [
                     "inactive"
-                ]
+                ],
+            "registrar": {
+                "name": "Kreative Digital OÜ",
+                "website": "https://kreative.ee"
+            },
+            "transfer_code": "2f81ec671b69a2aa5d6375631e259ae7",
             },
             {
                 "name": "koer.ee",
@@ -570,7 +575,12 @@ curl --location --request GET 'https://testrar.internet.ee/repp/v1/domains' \
                 "dnssec_keys": [],
                 "statuses": [
                     "inactive"
-                ]
+                ],
+            "registrar": {
+                "name": "Kreative Digital OÜ",
+                "website": "https://kreative.ee"
+            },
+            "transfer_code": "asdf564cs89er3dg46d5f3v1df6534g3f2",
             },
         ],
         "total_number_of_records": 69
@@ -616,7 +626,6 @@ curl --location --request GET 'https://testrar.internet.ee/repp/v1/domains/biz.e
             "outzone_at": null,
             "delete_date": null,
             "force_delete_date": null,
-            "transfer_code": "2f81ec671b69a2aa5d6375631e259ae7",
             "contacts": [
                 {
                     "code": "ATSAA:C7A52A30",
@@ -631,13 +640,19 @@ curl --location --request GET 'https://testrar.internet.ee/repp/v1/domains/biz.e
             "dnssec_keys": [],
             "statuses": [
                 "inactive"
-            ]
+            ],
+            "registrar": {
+                "name": "Kreative Digital OÜ",
+                "website": "https://kreative.ee"
+            },
+            "transfer_code": "2f81ec671b69a2aa5d6375631e259ae7",
         }
     }
 }
 ```
 
-Gets a specific domain object
+Returns a specific domain object, even if it doesn't belong to your registrar account.
+If you aren't sponsoring registrar for the domain, transfer_code is omitted from the response.
 
 ### HTTP Request
 
