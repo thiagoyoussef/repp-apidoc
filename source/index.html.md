@@ -280,7 +280,6 @@ curl --location --request GET 'https://testrar.internet.ee/repp/v1/contacts/ATSA
         },
         "email": "xxx@xxx.ee",
         "phone": "+xxx",
-        "fax": null,
         "auth_info": "ed33c67bedb32b1567b131",
         "statuses": [
             "ok",
