@@ -900,8 +900,13 @@ curl --location --request POST 'https://testrar.internet.ee/repp/v1/domains/kotl
     "nameservers": [
         {
             "hostname": "ns1.domainer.ee",
-            "ipv4": ["192.168.1.1"],
-            "ipv6": ["2620:119:35::35"]
+            "ipv4": ["192.168.1.1", "192.168.1.2"],
+            "ipv6": ["2620:119:35::35", "2620:119:35::36"]
+        },
+        {
+            "hostname": "ns2.domainer.ee",
+            "ipv4": ["192.168.1.3", "192.168.1.4"],
+            "ipv6": ["2620:119:35::37", "2620:119:35::38"]
         }
     ]
 }'
@@ -1031,6 +1036,12 @@ curl --location --request POST 'https://testrar.internet.ee/repp/v1/domains/666.
             "protocol": "3",
             "alg": "8",
             "public_key": "AwEAAddt2AkLfYGKgiEZB5SmIF8EvrjxNMH6HtxWEA4RJ9Ao6LCWheg8"
+        },
+        {
+            "flags": "257",
+            "protocol": "3",
+            "alg": "13",
+            "public_key": "mdsswUyr3DPW132mOi8V9xESWE8jTo0dxCjjnopKl+GqJxpVXckHAeF+KkxLbxILfDLUT0rAK9iUzy1L53eKGQ=="
         }
     ]
 }'
