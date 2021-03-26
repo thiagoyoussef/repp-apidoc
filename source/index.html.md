@@ -785,7 +785,7 @@ Parameter | Required | Type | Description
 --------- | ------- | ----- | -----------
 registrant | Yes | Object | New registrant object
 registrant[code] | Yes | String | Contact ID of new registrant
-registrant[verified] | No | Boolean | Defaults to false. Include it only if set to true.
+registrant[verified] | No | Boolean | Possible values are true / false. Defaults to false. Include it only if set to true.
 transfer_code | No | String | New EPP transfer code for domain
 
 <aside class="notice">
