@@ -845,6 +845,58 @@ exp_date | Yes | String | Current expiry date for domain (yyyy-mm-dd)
 Note — Wrap your payload attributes into "renew" object, as shown in example.
 </aside>
 
+## Delete a specific domain
+
+```shell
+curl --location --request DELETE 'https://registry.test/repp/v1/domains/kanakotlet.ee' \
+--header 'Authorization: Basic dGVzdDp0ZXN0MTIz' \
+
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "delete": {
+        "verified": false
+    }
+}'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "code": 1000,
+    "message": "Command completed successfully",
+    "data": {
+        "domain": {
+            "name": "kanakotlet.ee"
+        }
+    }
+}
+```
+
+Deletes a specific domain
+
+### HTTP Request
+
+`DELETE /repp/v1/domains/:domain_name`
+
+### URL Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+domain_name | Yes | Domain name
+
+### Required Headers
+
+Parameter | Required | Description
+--------- | ------- | -----------
+Auth-Code | No | domain's EPP transfer code
+### Payload Parameters
+
+Parameter | Required | Type | Description
+--------- | ------- | ----- | -----------
+delete | Yes | Hash | Hash holding verified flag
+delete[verified] | Yes | Boolean | Whether to ask registrant confirmation or not
+
 # Nameservers
 
 ## Get domain's nameservers
