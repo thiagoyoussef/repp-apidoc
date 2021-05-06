@@ -119,6 +119,39 @@ from | False | Show detailed transactions starting from datetime (yyyy-mm-dd)
 until | False | Show detailed transactions created before datetime (yyyy-mm-dd)
 # Poll messages
 
+## Get all messages
+```shell
+curl --location --request GET 'https://testrar.internet.ee/repp/v1/registrar/notifications/all_notifications' \
+--header 'Authorization: Basic dGVzdDp0ZXN0MTIz' \
+--data-raw ''
+```
+
+```json
+{
+    "code": 1000,
+    "message": "Command completed successfully. Returning 200 out of 500. Use URL parameters :limit and :offset to list other messages if needed",
+    "data": {
+        "id": 1399,
+        "text": "Registrant rejected domain update: koer.ee",
+        "attached_obj_type": "Epp::Domain",
+        "attached_obj_id": 34
+    }
+}
+```
+
+Get the list of unread pool messages.
+
+### HTTP Request
+
+`GET /repp/v1/registrar/notifications/all_notification`
+
+### URL Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+limit | No | Returned data limit. 200 by default
+offset | No | Indicates an offset. From what order to return
+
 ## Get latest unread poll message
 
 ```shell
