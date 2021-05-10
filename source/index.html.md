@@ -143,14 +143,14 @@ Get the list of unread pool messages.
 
 ### HTTP Request
 
-`GET /repp/v1/registrar/notifications/all_notification`
+`GET /repp/v1/registrar/notifications/all_notifications`
 
 ### URL Parameters
 
-Parameter | Required | Description
---------- | ------- | -----------
-limit | No | Returned data limit. 200 by default
-offset | No | Indicates an offset. From what order to return
+Parameter | Required | Default | Description
+--------- | ------- | ------- | -----------
+limit | No | 200 | How many objects to return
+offset | No | 0 | Object query offset
 
 ## Get latest unread poll message
 
