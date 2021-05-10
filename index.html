@@ -326,6 +326,9 @@
             <a href="#poll-messages" class="toc-h1 toc-link" data-title="Poll messages">Poll messages</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#get-all-messages" class="toc-h2 toc-link" data-title="Get all messages">Get all messages</a>
+                  </li>
+                  <li>
                     <a href="#get-latest-unread-poll-message" class="toc-h2 toc-link" data-title="Get latest unread poll message">Get latest unread poll message</a>
                   </li>
                   <li>
@@ -564,7 +567,43 @@ You must replace <code>dGVzdDp0ZXN0MTIz</code> with your personal API key.
 <td>Show detailed transactions created before datetime (yyyy-mm-dd)</td>
 </tr>
 </tbody></table>
-<h1 id='poll-messages'>Poll messages</h1><h2 id='get-latest-unread-poll-message'>Get latest unread poll message</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://testrar.internet.ee/repp/v1/registrar/notifications'</span> <span class="se">\</span>
+<h1 id='poll-messages'>Poll messages</h1><h2 id='get-all-messages'>Get all messages</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://testrar.internet.ee/repp/v1/registrar/notifications/all_notifications'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Basic dGVzdDp0ZXN0MTIz'</span> <span class="se">\</span>
+<span class="nt">--data-raw</span> <span class="s1">''</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Command completed successfully. Returning 200 out of 500. Use URL parameters :limit and :offset to list other messages if needed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1399</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Registrant rejected domain update: koer.ee"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"attached_obj_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Epp::Domain"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"attached_obj_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Get the list of unread pool messages.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET /repp/v1/registrar/notifications/all_notification</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>No</td>
+<td>Returned data limit. 200 by default</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>No</td>
+<td>Indicates an offset. From what order to return</td>
+</tr>
+</tbody></table>
+<h2 id='get-latest-unread-poll-message'>Get latest unread poll message</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://testrar.internet.ee/repp/v1/registrar/notifications'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Basic dGVzdDp0ZXN0MTIz'</span> <span class="se">\</span>
 <span class="nt">--data-raw</span> <span class="s1">''</span>
 </code></pre></div>
@@ -583,7 +622,7 @@ You must replace <code>dGVzdDp0ZXN0MTIz</code> with your personal API key.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Get the latest unread poll message</p>
-<h3 id='http-request-2'>HTTP Request</h3>
+<h3 id='http-request-3'>HTTP Request</h3>
 <p><code>GET /repp/v1/registrar/notifications</code></p>
 <h2 id='mark-poll-message-as-read'>Mark poll message as read</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> PUT <span class="s1">'https://testrar.internet.ee/repp/v1/registrar/notifications/1398'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Basic dGVzdDp0ZXN0MTIz'</span> <span class="se">\</span>
@@ -607,9 +646,9 @@ You must replace <code>dGVzdDp0ZXN0MTIz</code> with your personal API key.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Mark poll message as read</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+<h3 id='http-request-4'>HTTP Request</h3>
 <p><code>GET /repp/v1/registrar/notifications/:notification_id</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -656,9 +695,9 @@ You must replace <code>dGVzdDp0ZXN0MTIz</code> with your personal API key.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Get a specific poll message</p>
-<h3 id='http-request-4'>HTTP Request</h3>
+<h3 id='http-request-5'>HTTP Request</h3>
 <p><code>PUT /repp/v1/registrar/notifications/:notification_id</code></p>
-<h3 id='url-parameters-3'>URL Parameters</h3>
+<h3 id='url-parameters-4'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -689,7 +728,7 @@ You must replace <code>dGVzdDp0ZXN0MTIz</code> with your personal API key.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Get all contacts</p>
-<h3 id='http-request-5'>HTTP Request</h3>
+<h3 id='http-request-6'>HTTP Request</h3>
 <p><code>GET /repp/v1/contacts</code></p>
 <h2 id='get-a-specific-contact'>Get a specific contact</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://testrar.internet.ee/repp/v1/contacts/ATSAA:KARL'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Basic dGVzdDp0ZXN0MTIz'</span> <span class="se">\</span>
@@ -721,9 +760,9 @@ You must replace <code>dGVzdDp0ZXN0MTIz</code> with your personal API key.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Get a specific contact</p>
-<h3 id='http-request-6'>HTTP Request</h3>
+<h3 id='http-request-7'>HTTP Request</h3>
 <p><code>GET /repp/v1/contacts/:contact_id</code></p>
-<h3 id='url-parameters-4'>URL Parameters</h3>
+<h3 id='url-parameters-5'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -760,9 +799,9 @@ You must replace <code>dGVzdDp0ZXN0MTIz</code> with your personal API key.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Delete a specific contact</p>
-<h3 id='http-request-7'>HTTP Request</h3>
+<h3 id='http-request-8'>HTTP Request</h3>
 <p><code>DELETE /repp/v1/contacts/:contact_id</code></p>
-<h3 id='url-parameters-5'>URL Parameters</h3>
+<h3 id='url-parameters-6'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -806,7 +845,7 @@ You must replace <code>dGVzdDp0ZXN0MTIz</code> with your personal API key.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Create a new contact</p>
-<h3 id='http-request-8'>HTTP Request</h3>
+<h3 id='http-request-9'>HTTP Request</h3>
 <p><code>POST /repp/v1/contacts</code></p>
 <h3 id='payload-parameters-2'>Payload Parameters</h3>
 <table><thead>
@@ -881,9 +920,9 @@ Note — Wrap your payload attributes into "contact" object, as shown in example
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Update an existing contact</p>
-<h3 id='http-request-9'>HTTP Request</h3>
+<h3 id='http-request-10'>HTTP Request</h3>
 <p><code>PUT /repp/v1/contacts/:contact_id</code></p>
-<h3 id='url-parameters-6'>URL Parameters</h3>
+<h3 id='url-parameters-7'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -944,9 +983,9 @@ Note — Wrap your payload attributes into "contact" object, as shown in example
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Checks whether the contact code is available for custom use</p>
-<h3 id='http-request-10'>HTTP Request</h3>
+<h3 id='http-request-11'>HTTP Request</h3>
 <p><code>GET /repp/v1/contacts/check/:contact_id</code></p>
-<h3 id='url-parameters-7'>URL Parameters</h3>
+<h3 id='url-parameters-8'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1055,9 +1094,9 @@ Note — Wrap your payload attributes into "contact" object, as shown in example
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Gets all existing domains under current registrar account.</p>
-<h3 id='http-request-11'>HTTP Request</h3>
+<h3 id='http-request-12'>HTTP Request</h3>
 <p><code>GET /repp/v1/registrar/domains</code></p>
-<h3 id='url-parameters-8'>URL Parameters</h3>
+<h3 id='url-parameters-9'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1131,9 +1170,9 @@ Note — Wrap your payload attributes into "contact" object, as shown in example
 </span></code></pre></div>
 <p>Returns a specific domain object, even if it doesn&#39;t belong to your registrar account.
 If you aren&#39;t sponsoring registrar for the domain, transfer_code is omitted from the response.</p>
-<h3 id='http-request-12'>HTTP Request</h3>
+<h3 id='http-request-13'>HTTP Request</h3>
 <p><code>GET /repp/v1/domains/:domain_name</code></p>
-<h3 id='url-parameters-9'>URL Parameters</h3>
+<h3 id='url-parameters-10'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1184,7 +1223,7 @@ If you aren&#39;t sponsoring registrar for the domain, transfer_code is omitted 
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Register a new domain</p>
-<h3 id='http-request-13'>HTTP Request</h3>
+<h3 id='http-request-14'>HTTP Request</h3>
 <p><code>POST /repp/v1/domains</code></p>
 <h3 id='payload-parameters-4'>Payload Parameters</h3>
 <table><thead>
@@ -1328,9 +1367,9 @@ Note — Wrap your payload attributes into "domain" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Changes domain registrant or auth code</p>
-<h3 id='http-request-14'>HTTP Request</h3>
+<h3 id='http-request-15'>HTTP Request</h3>
 <p><code>PUT /repp/v1/domains/:domain_name</code></p>
-<h3 id='url-parameters-10'>URL Parameters</h3>
+<h3 id='url-parameters-11'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1409,9 +1448,9 @@ Note — Wrap your payload attributes into "domain" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Renews current domain for desired period.</p>
-<h3 id='http-request-15'>HTTP Request</h3>
+<h3 id='http-request-16'>HTTP Request</h3>
 <p><code>POST /repp/v1/domains/:domain_name/renew</code></p>
-<h3 id='url-parameters-11'>URL Parameters</h3>
+<h3 id='url-parameters-12'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1483,9 +1522,9 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Deletes a specific domain</p>
-<h3 id='http-request-16'>HTTP Request</h3>
+<h3 id='http-request-17'>HTTP Request</h3>
 <p><code>DELETE /repp/v1/domains/:domain_name</code></p>
-<h3 id='url-parameters-12'>URL Parameters</h3>
+<h3 id='url-parameters-13'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1562,9 +1601,9 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Gets a specific domain&#39;s nameservers</p>
-<h3 id='http-request-17'>HTTP Request</h3>
+<h3 id='http-request-18'>HTTP Request</h3>
 <p><code>GET /repp/v1/domains/:domain_name/nameservers</code></p>
-<h3 id='url-parameters-13'>URL Parameters</h3>
+<h3 id='url-parameters-14'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1610,9 +1649,9 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Add new nameserver(s) to specific domain</p>
-<h3 id='http-request-18'>HTTP Request</h3>
+<h3 id='http-request-19'>HTTP Request</h3>
 <p><code>POST /repp/v1/domains/:domain_name/nameservers</code></p>
-<h3 id='url-parameters-14'>URL Parameters</h3>
+<h3 id='url-parameters-15'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1678,9 +1717,9 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Delete existing nameserver from domain.</p>
-<h3 id='http-request-19'>HTTP Request</h3>
+<h3 id='http-request-20'>HTTP Request</h3>
 <p><code>DELETE /repp/v1/domains/:domain_name/nameservers/:nameserver_hostname</code></p>
-<h3 id='url-parameters-15'>URL Parameters</h3>
+<h3 id='url-parameters-16'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1722,9 +1761,9 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Gets a specific domain&#39;s DNSSEC keys</p>
-<h3 id='http-request-20'>HTTP Request</h3>
+<h3 id='http-request-21'>HTTP Request</h3>
 <p><code>GET /repp/v1/domains/:domain_name/dnssec</code></p>
-<h3 id='url-parameters-16'>URL Parameters</h3>
+<h3 id='url-parameters-17'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1772,9 +1811,9 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Add new DNSSEC key(s) to specific domain</p>
-<h3 id='http-request-21'>HTTP Request</h3>
+<h3 id='http-request-22'>HTTP Request</h3>
 <p><code>POST /repp/v1/domains/:domain_name/dnssec</code></p>
-<h3 id='url-parameters-17'>URL Parameters</h3>
+<h3 id='url-parameters-18'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1856,9 +1895,9 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Deletes one or many DNSSEC key(s) for specific domain.</p>
-<h3 id='http-request-22'>HTTP Request</h3>
+<h3 id='http-request-23'>HTTP Request</h3>
 <p><code>DELETE /repp/v1/domains/:domain_name/dnssec</code></p>
-<h3 id='url-parameters-18'>URL Parameters</h3>
+<h3 id='url-parameters-19'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1929,9 +1968,9 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Adds a clientHold status to a specific domain</p>
-<h3 id='http-request-23'>HTTP Request</h3>
+<h3 id='http-request-24'>HTTP Request</h3>
 <p><code>PUT /repp/v1/domains/:domain_name/statuses/clientHold</code></p>
-<h3 id='url-parameters-19'>URL Parameters</h3>
+<h3 id='url-parameters-20'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1959,9 +1998,9 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Removes clientHold status from specific domain</p>
-<h3 id='http-request-24'>HTTP Request</h3>
+<h3 id='http-request-25'>HTTP Request</h3>
 <p><code>DELETE /repp/v1/domains/:domain_name/statuses/clientHold</code></p>
-<h3 id='url-parameters-20'>URL Parameters</h3>
+<h3 id='url-parameters-21'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2047,9 +2086,9 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Gets a specific domain&#39;s transfer info</p>
-<h3 id='http-request-25'>HTTP Request</h3>
+<h3 id='http-request-26'>HTTP Request</h3>
 <p><code>GET /repp/v1/domains/:domain_name/transfer_info</code></p>
-<h3 id='url-parameters-21'>URL Parameters</h3>
+<h3 id='url-parameters-22'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2103,9 +2142,9 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Transfers domain from another registrar to your account.</p>
-<h3 id='http-request-26'>HTTP Request</h3>
+<h3 id='http-request-27'>HTTP Request</h3>
 <p><code>POST /repp/v1/domains/:domain_name/transfer</code></p>
-<h3 id='url-parameters-22'>URL Parameters</h3>
+<h3 id='url-parameters-23'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2181,7 +2220,7 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Transfers multiple domains from another registrar to your account.</p>
-<h3 id='http-request-27'>HTTP Request</h3>
+<h3 id='http-request-28'>HTTP Request</h3>
 <p><code>POST /repp/v1/domains/transfer</code></p>
 <h3 id='payload-parameters-12'>Payload Parameters</h3>
 <table><thead>
@@ -2247,7 +2286,7 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Cycles through every domain and replaces specific tech contact with another one.</p>
-<h3 id='http-request-28'>HTTP Request</h3>
+<h3 id='http-request-29'>HTTP Request</h3>
 <p><code>PATCH /repp/v1/domains/contacts</code></p>
 <h3 id='payload-parameters-13'>Payload Parameters</h3>
 <table><thead>
@@ -2334,7 +2373,7 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 </span></code></pre></div>
 <p>Cycles through every domain and replaces their specific nameserver with new data.
 The new new hostname of the nameserver must be different. It&#39;s not possible to change existing nameserver&#39;s IPv4 / IPv6 addresses with this request.</p>
-<h3 id='http-request-29'>HTTP Request</h3>
+<h3 id='http-request-30'>HTTP Request</h3>
 <p><code>PUT /repp/v1/registrar/nameservers</code></p>
 <h3 id='payload-parameters-14'>Payload Parameters</h3>
 <table><thead>
@@ -2421,7 +2460,7 @@ Note - It's safer to use "domains" scope, although it's not required. If you don
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Renews multiple domanins at once, for a fixed period.</p>
-<h3 id='http-request-30'>HTTP Request</h3>
+<h3 id='http-request-31'>HTTP Request</h3>
 <p><code>POST /repp/v1/domains/renew/bulk</code></p>
 <h3 id='payload-parameters-15'>Payload Parameters</h3>
 <table><thead>
