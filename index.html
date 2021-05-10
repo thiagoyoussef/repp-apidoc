@@ -589,18 +589,21 @@ You must replace <code>dGVzdDp0ZXN0MTIz</code> with your personal API key.
 <tr>
 <th>Parameter</th>
 <th>Required</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>limit</td>
 <td>No</td>
-<td>Returned data limit. 200 by default</td>
+<td>200</td>
+<td>How many objects to return</td>
 </tr>
 <tr>
 <td>offset</td>
 <td>No</td>
-<td>Indicates an offset. From what order to return</td>
+<td>0</td>
+<td>Object query offset</td>
 </tr>
 </tbody></table>
 <h2 id='get-latest-unread-poll-message'>Get latest unread poll message</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://testrar.internet.ee/repp/v1/registrar/notifications'</span> <span class="se">\</span>
