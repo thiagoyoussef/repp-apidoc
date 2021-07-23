@@ -23,10 +23,6 @@ We have language bindings in Shell. You can view code examples in the dark area 
 
 This production API project is only available for our active registrars. You can find more information about becoming registrar at our [wiki page](https://www.internet.ee/registrars/terms-and-conditions-for-becoming-a-registrar).
 
-<aside class="success">
-Remember — This is a sneak-peek of our REPP service, which isn't in production yet. For now, please rely on standard EPP implementation.
-</aside>
-
 # Environments
 
 Production endpoint: https://registrar.internet.ee/repp/v1/
@@ -211,7 +207,7 @@ Mark poll message as read
 
 ### HTTP Request
 
-`GET /repp/v1/registrar/notifications/:notification_id`
+`PUT /repp/v1/registrar/notifications/:notification_id`
 
 ### URL Parameters
 
@@ -252,7 +248,7 @@ Get a specific poll message
 
 ### HTTP Request
 
-`PUT /repp/v1/registrar/notifications/:notification_id`
+`GET /repp/v1/registrar/notifications/:notification_id`
 
 ### URL Parameters
 
