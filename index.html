@@ -470,10 +470,6 @@
 <p>We have language bindings in Shell. You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
 
 <p>This production API project is only available for our active registrars. You can find more information about becoming registrar at our <a href="https://www.internet.ee/registrars/terms-and-conditions-for-becoming-a-registrar">wiki page</a>.</p>
-
-<aside class="success">
-Remember — This is a sneak-peek of our REPP service, which isn't in production yet. For now, please rely on standard EPP implementation.
-</aside>
 <h1 id='environments'>Environments</h1>
 <p>Production endpoint: https://registrar.internet.ee/repp/v1/</p>
 
@@ -650,7 +646,7 @@ You must replace <code>dGVzdDp0ZXN0MTIz</code> with your personal API key.
 </span></code></pre></div>
 <p>Mark poll message as read</p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>GET /repp/v1/registrar/notifications/:notification_id</code></p>
+<p><code>PUT /repp/v1/registrar/notifications/:notification_id</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -699,7 +695,7 @@ You must replace <code>dGVzdDp0ZXN0MTIz</code> with your personal API key.
 </span></code></pre></div>
 <p>Get a specific poll message</p>
 <h3 id='http-request-5'>HTTP Request</h3>
-<p><code>PUT /repp/v1/registrar/notifications/:notification_id</code></p>
+<p><code>GET /repp/v1/registrar/notifications/:notification_id</code></p>
 <h3 id='url-parameters-4'>URL Parameters</h3>
 <table><thead>
 <tr>
