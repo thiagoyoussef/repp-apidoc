@@ -2344,7 +2344,25 @@ Note — Wrap your payload attributes into "renew" object, as shown in example.
 }'</span>
 </code></pre></div>
 <blockquote>
-<p>Both commands above return JSON structured like this:</p>
+<p>If you want to add nameserver for specific domains, remove parameter &quot;id&quot; like that:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> PUT <span class="s1">'https://testrar.internet.ee/repp/v1/registrar/nameservers'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Basic dGVzdDp0ZXN0MTIz'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+<span class="nt">--data-raw</span> <span class="s1">'{
+    "data": {
+        "type": "nameserver",
+        "domains": ["only.ee", "these.ee", "domains.ee"],
+        "attributes": {
+            "hostname": "ns1.ams1.domainer.ee",
+            "ipv4": ["192.168.1.1"],
+            "ipv6": ["2620:119:35::36"]
+        }
+    }
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>Commands above return JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
@@ -2397,9 +2415,9 @@ The new new hostname of the nameserver must be different. It&#39;s not possible 
 </tr>
 <tr>
 <td>data[id]</td>
-<td>Yes</td>
+<td>No</td>
 <td>String</td>
-<td>Hostname of replacable nameserver</td>
+<td>Hostname of replaceable nameserver</td>
 </tr>
 <tr>
 <td>data[domains]</td>
